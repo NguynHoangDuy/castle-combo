@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 250 300" width="250" height="300">
+  <defs>
+    <linearGradient id="bg_queen" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#A78BFA"/>
+      <stop offset="100%" style="stop-color:#5B21B6"/>
+    </linearGradient>
+    <linearGradient id="skin_queen" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#fff6d6"/>
+      <stop offset="100%" style="stop-color:#FDE7C7"/>
+    </linearGradient>
+    <filter id="shadow_queen">
+      <feDropShadow dx="2" dy="3" stdDeviation="2" flood-opacity="0.3"/>
+    </filter>
+    <clipPath id="card_queen">
+      <rect x="0" y="0" width="250" height="300" rx="15"/>
+    </clipPath>
+  </defs>
+
+  <!-- Background -->
+  <rect x="0" y="0" width="250" height="300" rx="15" fill="url(#bg_queen)"/>
+
+  <!-- Decorative pattern -->
+  <g opacity="0.08" clip-path="url(#card_queen)">
+    <circle cx="40" cy="50" r="15" fill="white"/><circle cx="210" cy="80" r="12" fill="white"/>
+  </g>
+
+  <!-- Character body -->
+  <g transform="translate(125, 165)" filter="url(#shadow_queen)">
+    <ellipse cx="0" cy="55" rx="58" ry="62" fill="#7C3AED"/>
+              <ellipse cx="0" cy="60" rx="52" ry="55" fill="#6321d4"/>
+              <path d="M-30 -5 Q0 5 30 -5 L40 30 Q0 40 -40 30 Z" fill="#FDE047"/>
+              <ellipse cx="0" cy="0" rx="25" ry="12" fill="#FDE047" opacity="0.5"/>
+              <path d="M-48 35 Q-55 50 -50 70" fill="#7C3AED" stroke="#B45309" stroke-width="2"/>
+              <path d="M48 35 Q55 50 50 70" fill="#7C3AED" stroke="#B45309" stroke-width="2"/>
+              <circle cx="-50" cy="72" r="9" fill="#FDE7C7"/>
+              <circle cx="50" cy="72" r="9" fill="#FDE7C7"/>
+              <ellipse cx="0" cy="10" rx="4" ry="3" fill="#B45309"/>
+  </g>
+
+  <!-- Character head -->
+  <g transform="translate(125, 100)">
+    <ellipse cx="0" cy="0" rx="42" ry="50" fill="url(#skin_queen)"/><ellipse cx="-40" cy="0" rx="7" ry="11" fill="#FDE7C7"/>
+             <ellipse cx="40" cy="0" rx="7" ry="11" fill="#FDE7C7"/>
+    <ellipse cx="0" cy="-40" rx="35" ry="25" fill="#1C1917"/>
+              <ellipse cx="0" cy="-55" rx="20" ry="15" fill="#1C1917"/>
+              <circle cx="5" cy="-62" r="8" fill="#030000"/>
+              <ellipse cx="-38" cy="-10" rx="6" ry="12" fill="#1C1917"/>
+              <ellipse cx="38" cy="-10" rx="6" ry="12" fill="#1C1917"/>
+    <ellipse cx="-14" cy="-8" rx="9" ry="8" fill="white"/>
+             <ellipse cx="14" cy="-8" rx="9" ry="8" fill="white"/><circle cx="-14" cy="-8" r="4" fill="#1C1917"/>
+             <circle cx="14" cy="-8" r="4" fill="#1C1917"/>
+             <circle cx="-13" cy="-9" r="1.5" fill="white"/>
+             <circle cx="15" cy="-9" r="1.5" fill="white"/><path d="M-23 -10 Q-14 -19 -5 -10" fill="none" stroke="#1C1917" stroke-width="2"/>
+               <path d="M5 -10 Q14 -19 23 -10" fill="none" stroke="#1C1917" stroke-width="2"/><ellipse cx="0" cy="8" rx="5" ry="7" fill="#f1dbbb"/><path d="M-10 22 Q0 30 10 22" fill="none" stroke="#C9544E" stroke-width="2.5"/><ellipse cx="0" cy="24" rx="6" ry="3" fill="#F9A8D4" opacity="0.5"/><ellipse cx="-22" cy="12" rx="8" ry="5" fill="#F87171" opacity="0.3"/>
+             <ellipse cx="22" cy="12" rx="8" ry="5" fill="#F87171" opacity="0.3"/><ellipse cx="-14" cy="-12" rx="4" ry="2" fill="#A855F7" opacity="0.3"/>
+             <ellipse cx="14" cy="-12" rx="4" ry="2" fill="#A855F7" opacity="0.3"/>
+    <g transform="translate(0, -55)">
+        <path d="M-25 8 L-25 -8 L-15 0 L0 -15 L15 0 L25 -8 L25 8 Z" fill="#FDE047" stroke="#B45309" stroke-width="2"/>
+        <circle cx="0" cy="-10" r="6" fill="#A855F7"/>
+        <circle cx="-15" cy="-2" r="3" fill="#EC4899"/>
+        <circle cx="15" cy="-2" r="3" fill="#EC4899"/>
+        <rect x="-25" y="6" width="50" height="6" fill="#FDE047" stroke="#B45309" stroke-width="1"/>
+      </g>
+  </g>
+
+  <!-- Type banner -->
+  <rect x="0" y="0" width="250" height="32" fill="#6B7280" opacity="0.95"/>
+  <text x="125" y="22" text-anchor="middle" font-family="Georgia, serif" font-size="13"
+        fill="white" font-weight="bold" letter-spacing="1">CASTLE</text>
+
+  <!-- Name banner -->
+  <rect x="0" y="260" width="250" height="40" fill="#6B7280"/>
+  <rect x="15" y="262" width="220" height="1.5" fill="#9CA3AF" opacity="0.4"/>
+  <text x="125" y="285" text-anchor="middle" font-family="Georgia, serif" font-size="14"
+        fill="white" font-weight="bold">QUEEN</text>
+</svg>

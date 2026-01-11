@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 250 300" width="250" height="300">
+  <defs>
+    <linearGradient id="bg_mercenary" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#a7aebc"/>
+      <stop offset="100%" style="stop-color:#6B7280"/>
+    </linearGradient>
+    <linearGradient id="skin_mercenary" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#e3b483"/>
+      <stop offset="100%" style="stop-color:#D4A574"/>
+    </linearGradient>
+    <filter id="shadow_mercenary">
+      <feDropShadow dx="2" dy="3" stdDeviation="2" flood-opacity="0.3"/>
+    </filter>
+    <clipPath id="card_mercenary">
+      <rect x="0" y="0" width="250" height="300" rx="15"/>
+    </clipPath>
+  </defs>
+
+  <!-- Background -->
+  <rect x="0" y="0" width="250" height="300" rx="15" fill="url(#bg_mercenary)"/>
+
+  <!-- Decorative pattern -->
+  <g opacity="0.08" clip-path="url(#card_mercenary)">
+    <circle cx="35" cy="45" r="30" fill="white"/><circle cx="215" cy="75" r="25" fill="white"/><circle cx="40" cy="220" r="35" fill="white"/>
+  </g>
+
+  <!-- Character body -->
+  <g transform="translate(125, 165)" filter="url(#shadow_mercenary)">
+    <ellipse cx="0" cy="52" rx="48" ry="55" fill="#6B7280"/>
+              <ellipse cx="0" cy="56" rx="42" ry="48" fill="#525967"/>
+              <rect x="-25" y="5" width="50" height="35" fill="#4B5563" rx="2"/>
+              <ellipse cx="-48" cy="36" rx="15" ry="22" fill="#6B7280"/>
+              <ellipse cx="48" cy="36" rx="15" ry="22" fill="#6B7280"/>
+              <circle cx="-52" cy="60" r="11" fill="#D4A574"/>
+              <circle cx="52" cy="60" r="11" fill="#D4A574"/>
+  </g>
+
+  <!-- Character head -->
+  <g transform="translate(125, 100)">
+    <ellipse cx="0" cy="0" rx="42" ry="50" fill="url(#skin_mercenary)"/><ellipse cx="-40" cy="0" rx="7" ry="11" fill="#D4A574"/>
+             <ellipse cx="40" cy="0" rx="7" ry="11" fill="#D4A574"/>
+    <ellipse cx="0" cy="-35" rx="40" ry="22" fill="#1C1917"/>
+              <ellipse cx="-15" cy="-38" rx="15" ry="10" fill="#030000"/>
+    <ellipse cx="-14" cy="-8" rx="9" ry="8" fill="white"/>
+             <ellipse cx="14" cy="-8" rx="9" ry="8" fill="white"/><circle cx="-14" cy="-8" r="4" fill="#1C1917"/>
+             <circle cx="14" cy="-8" r="4" fill="#1C1917"/>
+             <circle cx="-13" cy="-9" r="1.5" fill="white"/>
+             <circle cx="15" cy="-9" r="1.5" fill="white"/><path d="M-23 -10 Q-14 -19 -5 -10" fill="none" stroke="#1C1917" stroke-width="2"/>
+               <path d="M5 -10 Q14 -19 23 -10" fill="none" stroke="#1C1917" stroke-width="2"/><ellipse cx="0" cy="8" rx="5" ry="7" fill="#c89968"/><path d="M-12 22 L12 22" stroke="#78350F" stroke-width="3"/><ellipse cx="-22" cy="12" rx="8" ry="5" fill="#F87171" opacity="0.3"/>
+             <ellipse cx="22" cy="12" rx="8" ry="5" fill="#F87171" opacity="0.3"/><path d="M-25 -5 L-18 10" stroke="#D4A574" stroke-width="2" opacity="0.6"/>
+    
+  </g>
+
+  <!-- Type banner -->
+  <rect x="0" y="0" width="250" height="32" fill="#78350F" opacity="0.95"/>
+  <text x="125" y="22" text-anchor="middle" font-family="Georgia, serif" font-size="13"
+        fill="white" font-weight="bold" letter-spacing="1">VILLAGE</text>
+
+  <!-- Name banner -->
+  <rect x="0" y="260" width="250" height="40" fill="#78350F"/>
+  <rect x="15" y="262" width="220" height="1.5" fill="#92400E" opacity="0.4"/>
+  <text x="125" y="285" text-anchor="middle" font-family="Georgia, serif" font-size="14"
+        fill="white" font-weight="bold">MERCENARY</text>
+</svg>

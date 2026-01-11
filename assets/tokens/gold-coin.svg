@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80" width="80" height="80">
+  <defs>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FDE047"/>
+      <stop offset="30%" style="stop-color:#FACC15"/>
+      <stop offset="70%" style="stop-color:#EAB308"/>
+      <stop offset="100%" style="stop-color:#CA8A04"/>
+    </linearGradient>
+    <linearGradient id="goldShine" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FEF9C3" stop-opacity="0.8"/>
+      <stop offset="100%" style="stop-color:#FEF9C3" stop-opacity="0"/>
+    </linearGradient>
+    <filter id="coinShadow">
+      <feDropShadow dx="2" dy="2" stdDeviation="2" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+
+  <!-- Coin base -->
+  <ellipse cx="40" cy="42" rx="32" ry="8" fill="#92400E" opacity="0.5"/>
+  <circle cx="40" cy="38" r="32" fill="url(#goldGrad)" filter="url(#coinShadow)"/>
+
+  <!-- Coin edge -->
+  <circle cx="40" cy="38" r="32" fill="none" stroke="#92400E" stroke-width="2"/>
+  <circle cx="40" cy="38" r="28" fill="none" stroke="#B45309" stroke-width="1"/>
+
+  <!-- Inner circle -->
+  <circle cx="40" cy="38" r="22" fill="none" stroke="#B45309" stroke-width="2"/>
+
+  <!-- G symbol -->
+  <text x="40" y="46" text-anchor="middle" font-family="serif" font-size="28"
+        fill="#92400E" font-weight="bold">G</text>
+
+  <!-- Shine effect -->
+  <ellipse cx="30" cy="28" rx="12" ry="8" fill="url(#goldShine)"/>
+</svg>

@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 250 300" width="250" height="300">
+  <defs>
+    <linearGradient id="bg_archbishop" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ffff83"/>
+      <stop offset="100%" style="stop-color:#FDE047"/>
+    </linearGradient>
+    <linearGradient id="skin_archbishop" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ffce7e"/>
+      <stop offset="100%" style="stop-color:#FDBF6F"/>
+    </linearGradient>
+    <filter id="shadow_archbishop">
+      <feDropShadow dx="2" dy="3" stdDeviation="2" flood-opacity="0.3"/>
+    </filter>
+    <clipPath id="card_archbishop">
+      <rect x="0" y="0" width="250" height="300" rx="15"/>
+    </clipPath>
+  </defs>
+
+  <!-- Background -->
+  <rect x="0" y="0" width="250" height="300" rx="15" fill="url(#bg_archbishop)"/>
+
+  <!-- Decorative pattern -->
+  <g opacity="0.08" clip-path="url(#card_archbishop)">
+    <circle cx="35" cy="45" r="30" fill="white"/><circle cx="215" cy="75" r="25" fill="white"/><circle cx="40" cy="220" r="35" fill="white"/>
+  </g>
+
+  <!-- Character body -->
+  <g transform="translate(125, 165)" filter="url(#shadow_archbishop)">
+    <ellipse cx="0" cy="55" rx="52" ry="60" fill="#FDE047"/>
+              <ellipse cx="0" cy="60" rx="46" ry="52" fill="#e4c72e"/>
+              <rect x="-10" y="-5" width="20" height="60" fill="#FFFFFF"/>
+              <rect x="-25" y="15" width="50" height="15" fill="#FFFFFF"/>
+              <circle cx="0" cy="22" r="8" fill="#B45309"/>
+              <ellipse cx="-50" cy="40" rx="15" ry="24" fill="#FDE047"/>
+              <ellipse cx="50" cy="40" rx="15" ry="24" fill="#FDE047"/>
+              <circle cx="-54" cy="66" r="10" fill="#FDBF6F"/>
+              <circle cx="54" cy="66" r="10" fill="#FDBF6F"/>
+  </g>
+
+  <!-- Character head -->
+  <g transform="translate(125, 100)">
+    <ellipse cx="0" cy="0" rx="45" ry="50" fill="url(#skin_archbishop)"/><ellipse cx="-40" cy="0" rx="7" ry="11" fill="#FDBF6F"/>
+             <ellipse cx="40" cy="0" rx="7" ry="11" fill="#FDBF6F"/>
+    <ellipse cx="-35" cy="-5" rx="12" ry="20" fill="#E5E7EB"/>
+              <ellipse cx="35" cy="-5" rx="12" ry="20" fill="#E5E7EB"/>
+              <ellipse cx="0" cy="-45" rx="15" ry="8" fill="#FDBF6F"/>
+    <ellipse cx="-14" cy="-8" rx="8" ry="7" fill="white"/>
+             <ellipse cx="14" cy="-8" rx="8" ry="7" fill="white"/><circle cx="-14" cy="-8" r="4" fill="#1C1917"/>
+             <circle cx="14" cy="-8" r="4" fill="#1C1917"/>
+             <circle cx="-13" cy="-9" r="1.5" fill="white"/>
+             <circle cx="15" cy="-9" r="1.5" fill="white"/><path d="M-22 -16 Q-14 -20 -6 -16" fill="none" stroke="#78350F" stroke-width="2"/>
+               <path d="M22 -16 Q14 -20 6 -16" fill="none" stroke="#78350F" stroke-width="2"/><ellipse cx="0" cy="8" rx="7" ry="9" fill="#f1b363"/><path d="M-10 22 Q0 28 10 22" fill="none" stroke="#78350F" stroke-width="2"/><ellipse cx="0" cy="35" rx="30" ry="30" fill="#E5E7EB"/>
+               <ellipse cx="0" cy="45" rx="20" ry="25" fill="#d6d8dc"/><path d="M-28 -15 Q-22 -12 -18 -15" fill="none" stroke="#e9ab5b" stroke-width="1" opacity="0.5"/>
+             <path d="M28 -15 Q22 -12 18 -15" fill="none" stroke="#e9ab5b" stroke-width="1" opacity="0.5"/>
+             <path d="M-25 5 Q-22 8 -20 5" fill="none" stroke="#e9ab5b" stroke-width="1" opacity="0.4"/>
+             <path d="M25 5 Q22 8 20 5" fill="none" stroke="#e9ab5b" stroke-width="1" opacity="0.4"/>
+    <g transform="translate(0, -58)">
+        <path d="M-28 18 L-28 -5 L0 -40 L28 -5 L28 18 Z" fill="#FDE047" stroke="#B45309" stroke-width="2"/>
+        <line x1="0" y1="-35" x2="0" y2="15" stroke="#B45309" stroke-width="3"/>
+        <line x1="-22" y1="0" x2="22" y2="0" stroke="#B45309" stroke-width="3"/>
+      </g>
+  </g>
+
+  <!-- Type banner -->
+  <rect x="0" y="0" width="250" height="32" fill="#6B7280" opacity="0.95"/>
+  <text x="125" y="22" text-anchor="middle" font-family="Georgia, serif" font-size="13"
+        fill="white" font-weight="bold" letter-spacing="1">CASTLE</text>
+
+  <!-- Name banner -->
+  <rect x="0" y="260" width="250" height="40" fill="#6B7280"/>
+  <rect x="15" y="262" width="220" height="1.5" fill="#9CA3AF" opacity="0.4"/>
+  <text x="125" y="285" text-anchor="middle" font-family="Georgia, serif" font-size="14"
+        fill="white" font-weight="bold">ARCHBISHOP</text>
+</svg>

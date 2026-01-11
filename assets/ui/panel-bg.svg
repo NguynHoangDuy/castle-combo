@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 200" width="300" height="200">
+  <defs>
+    <linearGradient id="panelGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#1F2937" stop-opacity="0.95"/>
+      <stop offset="100%" style="stop-color:#111827" stop-opacity="0.98"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Panel background -->
+  <rect x="0" y="0" width="300" height="200" rx="12" fill="url(#panelGrad)"/>
+
+  <!-- Border -->
+  <rect x="2" y="2" width="296" height="196" rx="10" fill="none"
+        stroke="#374151" stroke-width="2"/>
+
+  <!-- Inner highlight -->
+  <rect x="6" y="6" width="288" height="40" rx="8" fill="white" opacity="0.03"/>
+
+  <!-- Corner decorations -->
+  <path d="M15 5 L30 5 L30 8 L18 8 L18 20 L15 20 Z" fill="#F59E0B" opacity="0.5"/>
+  <path d="M285 5 L270 5 L270 8 L282 8 L282 20 L285 20 Z" fill="#F59E0B" opacity="0.5"/>
+  <path d="M15 195 L30 195 L30 192 L18 192 L18 180 L15 180 Z" fill="#F59E0B" opacity="0.5"/>
+  <path d="M285 195 L270 195 L270 192 L282 192 L282 180 L285 180 Z" fill="#F59E0B" opacity="0.5"/>
+</svg>

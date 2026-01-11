@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 250 300" width="250" height="300">
+  <defs>
+    <linearGradient id="bg_jester" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FDE047"/>
+      <stop offset="100%" style="stop-color:#CA8A04"/>
+    </linearGradient>
+    <linearGradient id="skin_jester" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#fff6d6"/>
+      <stop offset="100%" style="stop-color:#FDE7C7"/>
+    </linearGradient>
+    <filter id="shadow_jester">
+      <feDropShadow dx="2" dy="3" stdDeviation="2" flood-opacity="0.3"/>
+    </filter>
+    <clipPath id="card_jester">
+      <rect x="0" y="0" width="250" height="300" rx="15"/>
+    </clipPath>
+  </defs>
+
+  <!-- Background -->
+  <rect x="0" y="0" width="250" height="300" rx="15" fill="url(#bg_jester)"/>
+
+  <!-- Decorative pattern -->
+  <g opacity="0.08" clip-path="url(#card_jester)">
+    <circle cx="30" cy="40" r="20" fill="white"/><circle cx="60" cy="70" r="15" fill="white"/><circle cx="200" cy="50" r="18" fill="white"/>
+  </g>
+
+  <!-- Character body -->
+  <g transform="translate(125, 165)" filter="url(#shadow_jester)">
+    <ellipse cx="0" cy="55" rx="48" ry="55" fill="#FACC15"/>
+              <ellipse cx="0" cy="60" rx="42" ry="48" fill="#EF4444"/>
+              <path d="M-25 0 L0 70" fill="none" stroke="#FACC15" stroke-width="20"/>
+              <path d="M25 0 L0 70" fill="none" stroke="#EF4444" stroke-width="20"/>
+              <circle cx="-5" cy="15" r="5" fill="#22C55E"/>
+              <circle cx="5" cy="30" r="5" fill="#22C55E"/>
+              <circle cx="-5" cy="45" r="5" fill="#22C55E"/>
+              <ellipse cx="-48" cy="35" rx="15" ry="22" fill="#FACC15"/>
+              <ellipse cx="48" cy="35" rx="15" ry="22" fill="#EF4444"/>
+              <circle cx="-52" cy="60" r="10" fill="#FDE7C7"/>
+              <circle cx="52" cy="60" r="10" fill="#FDE7C7"/>
+  </g>
+
+  <!-- Character head -->
+  <g transform="translate(125, 100)">
+    <ellipse cx="0" cy="0" rx="45" ry="50" fill="url(#skin_jester)"/><ellipse cx="-40" cy="0" rx="7" ry="11" fill="#FDE7C7"/>
+             <ellipse cx="40" cy="0" rx="7" ry="11" fill="#FDE7C7"/>
+    <ellipse cx="0" cy="-30" rx="42" ry="28" fill="#EF4444"/>
+              <polygon points="-30,-50 -25,-65 -20,-48" fill="#EF4444"/>
+              <polygon points="0,-55 5,-72 10,-52" fill="#EF4444"/>
+              <polygon points="25,-50 30,-68 35,-48" fill="#EF4444"/>
+              <polygon points="-15,-52 -10,-65 -5,-50" fill="#d62b2b"/>
+              <polygon points="10,-53 15,-67 20,-50" fill="#d62b2b"/>
+    <ellipse cx="-14" cy="-8" rx="8" ry="7" fill="white"/>
+             <ellipse cx="14" cy="-8" rx="8" ry="7" fill="white"/><circle cx="-14" cy="-8" r="4" fill="#1C1917"/>
+             <circle cx="14" cy="-8" r="4" fill="#1C1917"/>
+             <circle cx="-13" cy="-9" r="1.5" fill="white"/>
+             <circle cx="15" cy="-9" r="1.5" fill="white"/><ellipse cx="0" cy="8" rx="7" ry="9" fill="#f1dbbb"/><ellipse cx="0" cy="27" rx="14" ry="10" fill="#991B1B"/>
+             <ellipse cx="0" cy="32" rx="8" ry="5" fill="#EC4899"/>
+    <g transform="translate(0, -50)">
+        <path d="M-30 12 Q-45 -15 -25 -35" fill="#EF4444" stroke="#B91C1C" stroke-width="2"/>
+        <path d="M0 12 Q0 -25 0 -45" fill="#FACC15" stroke="#B45309" stroke-width="2"/>
+        <path d="M30 12 Q45 -15 25 -35" fill="#22C55E" stroke="#166534" stroke-width="2"/>
+        <circle cx="-25" cy="-35" r="8" fill="#FDE047"/>
+        <circle cx="0" cy="-45" r="8" fill="#FDE047"/>
+        <circle cx="25" cy="-35" r="8" fill="#FDE047"/>
+      </g>
+  </g>
+
+  <!-- Type banner -->
+  <rect x="0" y="0" width="250" height="32" fill="#6B7280" opacity="0.95"/>
+  <text x="125" y="22" text-anchor="middle" font-family="Georgia, serif" font-size="13"
+        fill="white" font-weight="bold" letter-spacing="1">CASTLE</text>
+
+  <!-- Name banner -->
+  <rect x="0" y="260" width="250" height="40" fill="#6B7280"/>
+  <rect x="15" y="262" width="220" height="1.5" fill="#9CA3AF" opacity="0.4"/>
+  <text x="125" y="285" text-anchor="middle" font-family="Georgia, serif" font-size="14"
+        fill="white" font-weight="bold">JESTER</text>
+</svg>

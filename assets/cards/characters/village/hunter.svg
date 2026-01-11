@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 250 300" width="250" height="300">
+  <defs>
+    <linearGradient id="bg_hunter" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#52a170"/>
+      <stop offset="100%" style="stop-color:#166534"/>
+    </linearGradient>
+    <linearGradient id="skin_hunter" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ffce7e"/>
+      <stop offset="100%" style="stop-color:#FDBF6F"/>
+    </linearGradient>
+    <filter id="shadow_hunter">
+      <feDropShadow dx="2" dy="3" stdDeviation="2" flood-opacity="0.3"/>
+    </filter>
+    <clipPath id="card_hunter">
+      <rect x="0" y="0" width="250" height="300" rx="15"/>
+    </clipPath>
+  </defs>
+
+  <!-- Background -->
+  <rect x="0" y="0" width="250" height="300" rx="15" fill="url(#bg_hunter)"/>
+
+  <!-- Decorative pattern -->
+  <g opacity="0.08" clip-path="url(#card_hunter)">
+    <circle cx="35" cy="45" r="30" fill="white"/><circle cx="215" cy="75" r="25" fill="white"/><circle cx="40" cy="220" r="35" fill="white"/>
+  </g>
+
+  <!-- Character body -->
+  <g transform="translate(125, 165)" filter="url(#shadow_hunter)">
+    <ellipse cx="0" cy="55" rx="45" ry="55" fill="#166534"/>
+              <ellipse cx="0" cy="58" rx="40" ry="48" fill="#004c1b"/>
+              <path d="M-25 0 Q0 10 25 0 L30 40 Q0 50 -30 40 Z" fill="#15803D"/>
+              <rect x="-5" y="5" width="10" height="35" fill="#14532D"/>
+              <ellipse cx="-45" cy="35" rx="12" ry="20" fill="#166534"/>
+              <ellipse cx="45" cy="35" rx="12" ry="20" fill="#166534"/>
+              <circle cx="-48" cy="58" r="10" fill="#FDBF6F"/>
+              <circle cx="48" cy="58" r="10" fill="#FDBF6F"/>
+  </g>
+
+  <!-- Character head -->
+  <g transform="translate(125, 100)">
+    <ellipse cx="0" cy="0" rx="45" ry="50" fill="url(#skin_hunter)"/><ellipse cx="-40" cy="0" rx="7" ry="11" fill="#FDBF6F"/>
+             <ellipse cx="40" cy="0" rx="7" ry="11" fill="#FDBF6F"/>
+    <ellipse cx="0" cy="-35" rx="40" ry="22" fill="#166534"/>
+              <ellipse cx="-15" cy="-38" rx="15" ry="10" fill="#004c1b"/>
+    <ellipse cx="-14" cy="-8" rx="8" ry="7" fill="white"/>
+             <ellipse cx="14" cy="-8" rx="8" ry="7" fill="white"/><circle cx="-14" cy="-9" r="4" fill="#1C1917"/>
+             <circle cx="14" cy="-9" r="4" fill="#1C1917"/>
+             <circle cx="-13" cy="-10" r="1.5" fill="white"/>
+             <circle cx="15" cy="-10" r="1.5" fill="white"/><ellipse cx="0" cy="8" rx="7" ry="9" fill="#f1b363"/><path d="M-10 22 Q0 28 10 22" fill="none" stroke="#78350F" stroke-width="2"/>
+    
+  </g>
+
+  <!-- Type banner -->
+  <rect x="0" y="0" width="250" height="32" fill="#78350F" opacity="0.95"/>
+  <text x="125" y="22" text-anchor="middle" font-family="Georgia, serif" font-size="13"
+        fill="white" font-weight="bold" letter-spacing="1">VILLAGE</text>
+
+  <!-- Name banner -->
+  <rect x="0" y="260" width="250" height="40" fill="#78350F"/>
+  <rect x="15" y="262" width="220" height="1.5" fill="#92400E" opacity="0.4"/>
+  <text x="125" y="285" text-anchor="middle" font-family="Georgia, serif" font-size="14"
+        fill="white" font-weight="bold">HUNTER</text>
+</svg>

@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" width="40" height="40">
+  <defs>
+    <linearGradient id="pointsGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#C084FC"/>
+      <stop offset="100%" style="stop-color:#7C3AED"/>
+    </linearGradient>
+  </defs>
+  <!-- Star shape -->
+  <polygon points="20,2 24,14 37,14 27,22 31,35 20,27 9,35 13,22 3,14 16,14"
+           fill="url(#pointsGrad)" stroke="#5B21B6" stroke-width="1.5"/>
+</svg>
