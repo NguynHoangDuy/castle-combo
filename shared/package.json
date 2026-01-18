@@ -1,0 +1,21 @@
+{
+  "name": "@castle-combo/shared",
+  "version": "1.0.0",
+  "description": "Shared types for Castle Combo",
+  "type": "module",
+  "main": "src/index.ts",
+  "types": "src/index.ts",
+  "exports": {
+    ".": {
+      "import": "./src/index.ts",
+      "types": "./src/index.ts"
+    }
+  },
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch"
+  },
+  "files": [
+    "src"
+  ]
+}

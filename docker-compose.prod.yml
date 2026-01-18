@@ -1,0 +1,64 @@
+version: '3.8'
+
+services:
+  # MongoDB Database
+  mongodb:
+    image: mongo:7
+    container_name: castle-combo-mongodb
+    restart: always
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: ${MONGO_ROOT_USERNAME}
+      MONGO_INITDB_ROOT_PASSWORD: ${MONGO_ROOT_PASSWORD}
+      MONGO_INITDB_DATABASE: castle_combo
+    volumes:
+      - mongodb_data:/data/db
+    networks:
+      - castle-combo-network
+    healthcheck:
+      test: echo 'db.runCommand("ping").ok' | mongosh localhost:27017/test --quiet
+      interval: 10s
+      timeout: 10s
+      retries: 5
+      start_period: 40s
+
+  # Backend Server
+  server:
+    build:
+      context: ./server
+      target: production
+    container_name: castle-combo-server
+    restart: always
+    environment:
+      NODE_ENV: production
+      PORT: 3000
+      MONGODB_URI: mongodb://${MONGO_ROOT_USERNAME}:${MONGO_ROOT_PASSWORD}@mongodb:27017/castle_combo?authSource=admin
+      JWT_SECRET: ${JWT_SECRET}
+      JWT_EXPIRES_IN: ${JWT_EXPIRES_IN:-7d}
+      CLIENT_URL: ${CLIENT_URL}
+    networks:
+      - castle-combo-network
+    depends_on:
+      mongodb:
+        condition: service_healthy
+
+  # Frontend Client (Nginx)
+  client:
+    build:
+      context: ./client
+      target: production
+    container_name: castle-combo-client
+    restart: always
+    ports:
+      - "80:80"
+    networks:
+      - castle-combo-network
+    depends_on:
+      - server
+
+networks:
+  castle-combo-network:
+    driver: bridge
+
+volumes:
+  mongodb_data:
+    driver: local
