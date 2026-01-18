@@ -19,7 +19,7 @@
       "shields": ["blue", "purple"],
       "ability": { "type": "gain_keys", "amount": 2 },
       "scoring": { "type": "per_shield", "shield": "blue", "points": 3 },
-      "image": "king.png",
+      "image": "card_01.webp",
       "description": "The mighty ruler of the realm"
     },
     {

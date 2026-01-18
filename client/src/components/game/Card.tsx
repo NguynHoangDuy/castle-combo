@@ -13,25 +13,27 @@ const SHIELD_COLORS: Record<ShieldColor, string> = {
  * Format ability text for display
  */
 function formatAbility(ability: CardAbility): string {
+  const a = ability as unknown as Record<string, unknown>;
+
   switch (ability.type) {
     case 'gain_gold':
-      return `+${ability.amount} Gold`;
+      return `+${a.amount} Gold`;
     case 'gain_keys':
-      return `+${ability.amount} Key${ability.amount > 1 ? 's' : ''}`;
+      return `+${a.amount} Key${(a.amount as number) > 1 ? 's' : ''}`;
     case 'gain_both':
-      return `+${ability.gold} Gold, +${ability.keys} Key${ability.keys > 1 ? 's' : ''}`;
+      return `+${a.gold} Gold, +${a.keys} Key${(a.keys as number) > 1 ? 's' : ''}`;
+    case 'gain_gold_per_card':
+      return `+1 Gold/card`;
     case 'discount':
-      return `-${ability.amount} cost`;
+      return `-${a.amount} cost`;
     case 'discount_type':
-      return `-${ability.amount} ${ability.cardType}`;
+      return `-${a.amount} ${a.cardType}`;
     case 'discount_shield':
-      return `-${ability.amount} ${ability.shield}`;
-    case 'refresh_market':
-      return 'Refresh market';
+      return `-${a.amount} ${a.shield}`;
+    case 'free_messenger':
+      return 'Free messenger';
     case 'view_deck':
-      return `View ${ability.count} cards`;
-    case 'steal_gold':
-      return `Steal ${ability.amount} gold`;
+      return `View ${a.amount || a.count || 3} cards`;
     case 'none':
     default:
       return 'No ability';
@@ -42,48 +44,102 @@ function formatAbility(ability: CardAbility): string {
  * Format scoring text for display
  */
 function formatScoring(scoring: CardScoring): string {
+  const s = scoring as unknown as Record<string, unknown>;
+  const pts = s.points as number;
+
   switch (scoring.type) {
+    // Shield-based scoring
     case 'per_shield':
-      return `${scoring.points}pt per ${scoring.shield}`;
-    case 'per_type':
-      return `${scoring.points}pt per ${scoring.cardType}`;
-    case 'per_category':
-      return `${scoring.points}pt per ${scoring.category}`;
-    case 'adjacent_type':
-      return `${scoring.points}pt per adj ${scoring.cardType}`;
-    case 'adjacent_shield':
-      return `${scoring.points}pt per adj ${scoring.shield}`;
-    case 'adjacent_category':
-      return `${scoring.points}pt per adj ${scoring.category}`;
-    case 'per_row':
-      return `${scoring.points}pt per card in row`;
-    case 'per_column':
-      return `${scoring.points}pt per card in col`;
-    case 'diagonal':
-      return `${scoring.points}pt per diagonal`;
-    case 'corners':
-      return `${scoring.points}pt if in corner`;
-    case 'center':
-      return `${scoring.points}pt if in center`;
-    case 'edges':
-      return `${scoring.points}pt if on edge`;
-    case 'set_collection':
-      return `${scoring.points}pt for set`;
+      return `${pts}pt/${s.shield}`;
     case 'threshold':
-      return `${scoring.points}pt if ${scoring.minimum}+ ${scoring.shield}`;
+      return `${pts}pt if ${s.minimum}+ ${s.shield}`;
+    case 'no_shield':
+      return `${pts}pt if no ${s.shield}`;
+    case 'all_six_shields':
+      return `${pts}pt per all 6 colors`;
     case 'unique_shields':
-      return `${scoring.points}pt per unique shield`;
-    case 'pair_bonus':
-      return `${scoring.points}pt per pair`;
-    case 'complete_row':
-      return `${scoring.points}pt for full row`;
-    case 'complete_column':
-      return `${scoring.points}pt for full col`;
-    case 'flat':
-      return `${scoring.points}pt`;
-    case 'none':
+      return s.perColor ? `${pts}pt/unique shield` : `${pts}pt if ${s.minimum}+ colors`;
+    case 'same_shield_set':
+      return `${pts}pt for ${s.count} same shields`;
+
+    // Position-based scoring
+    case 'per_adjacent':
+      return `${pts}pt/adjacent`;
+    case 'per_row':
+      return `${pts}pt/card in row`;
+    case 'per_column':
+      return `${pts}pt/card in col`;
+    case 'per_diagonal':
+      return `${pts}pt/diagonal`;
+    case 'per_corner':
+      return `${pts}pt/corner card`;
+    case 'per_edge':
+      return `${pts}pt if on edge`;
+    case 'center_position':
+      return `${pts}pt if center`;
+    case 'specific_row':
+      return `${pts}pt/card in row ${s.row}`;
+    case 'specific_column':
+      return `${pts}pt/card in col ${s.column}`;
+
+    // Type-based scoring
+    case 'per_type':
+      return `${pts}pt/${s.cardType}`;
+    case 'per_category':
+      return `${pts}pt/${s.category}`;
+    case 'per_type_category':
+      return `${pts}pt/${s.cardType} ${s.category}`;
+    case 'per_type_with_shield':
+      return `${pts}pt/${s.cardType} w/${s.shield}`;
+    case 'adjacent_type':
+      return `${pts}pt/adj ${s.cardType}`;
+    case 'adjacent_category':
+      return `${pts}pt/adj ${s.category}`;
+    case 'adjacent_shield':
+      return `${pts}pt/adj ${s.shield}`;
+    case 'adjacent_card_name':
+      return `${pts}pt/adj ${s.name}`;
+    case 'majority_type':
+      return `${pts}pt/majority type`;
+
+    // Set & collection scoring
+    case 'set_collection':
+      return `${pts}pt per set`;
+    case 'no_duplicates':
+      return `${pts}pt if unique cards`;
+    case 'unique_card_names':
+      return `${pts}pt/unique name`;
+
+    // Conditional scoring
+    case 'no_adjacent_type':
+      return `${pts}pt if no adj ${s.cardType}`;
+    case 'no_adjacent_category':
+      return `${pts}pt if no adj ${s.category}`;
+
+    // Grid-based scoring
+    case 'corners_filled':
+      return `${pts}pt/corner filled`;
+    case 'all_corners':
+      return `${pts}pt if all corners`;
+    case 'corners_with_shield':
+      return `${pts}pt/corner w/${s.shield}`;
+    case 'complete_rows':
+      return `${pts}pt/complete row`;
+    case 'complete_columns':
+      return `${pts}pt/complete col`;
+
+    // Special scoring
+    case 'per_remaining_gold':
+      return `${pts}pt/${s.divisor} gold`;
+    case 'double_shield_cards':
+      return `${pts}pt/2-shield card`;
+    case 'per_card_in_grid':
+      return `${pts}pt/card in grid`;
+    case 'negative':
+      return `${pts}pt`;
+
     default:
-      return '0pt';
+      return `${pts || 0}pt`;
   }
 }
 
@@ -131,11 +187,18 @@ export default function Card({ card, size = 'medium', selected, onClick, disable
         </div>
       </div>
 
-      {/* Card art placeholder */}
-      <div className="flex-1 bg-slate-700 flex items-center justify-center min-h-0">
-        <span className="text-2xl">
-          {card.type === 'castle' ? '🏰' : '🏘️'}
-        </span>
+      {/* Card art */}
+      <div className="flex-1 bg-slate-700 flex items-center justify-center min-h-0 overflow-hidden">
+        <img
+          src={`/cards/${card.type === 'castle' ? `card_${String(card.id).padStart(2, '0')}.webp` : `card_${String(card.id + 1).padStart(2, '0')}.webp`}`}
+          alt={card.name}
+          className="w-full h-full object-cover"
+          onError={(e) => {
+            // Fallback to emoji if image fails to load
+            e.currentTarget.style.display = 'none';
+            e.currentTarget.parentElement!.innerHTML = `<span class="text-2xl">${card.type === 'castle' ? '🏰' : '🏘️'}</span>`;
+          }}
+        />
       </div>
 
       {/* Ability section */}
